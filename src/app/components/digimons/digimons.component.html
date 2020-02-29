@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="form-body" style="margin-top: 40px;">
+    <form class="form form-horizontal">
+      <h2 class="form-section"><i class="ft-list"></i>DIGIMONS</h2><br/>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <input *ngIf="divList" type='text' style='padding:8px;margin:15px auto;width:70%;'
+                                              placeholder='Escriba para filtrar...'  (keyup)='updateFilter($event)' />
+          </div>
+        </div>
+      </div>
+      <br/>
+    </form>
+</div>
+
+  <div class="row row-cols-1 row-cols-md-5">
+    <div class="col mb-4" *ngFor="let lista of listaDigimons">
+      <div class="card">
+        <img [src]="lista.img" class="card-img-top" alt="lista.img">
+        <div class="card-body">
+          <h5 class="card-title">{{lista.name}}</h5>
+          <p class="card-text">{{lista.level}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">ID: {{lista.id}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
